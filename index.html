@@ -300,7 +300,9 @@
                                     </div>
                                     <!-- Phone number input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="phone" name="phone" type="tel" placeholder="99 99999-9999"  required autocomplete="tel-national" />
+                                        <input class="form-control" id="phone" name="phone" type="tel" placeholder="99 99999-9999"  required maxlength="15"
+                                                     required autocomplete="tel-national" 
+                                                     oninput="formataFone(this)" />
                                         <label for="phone">Telefone</label>
                                         <div class="invalid-feedback" data-sb-feedback="phone:required">O número de telefone é obrigatório.</div>
                                     </div>

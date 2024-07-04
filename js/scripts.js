@@ -7,10 +7,31 @@
 // Scripts
 // 
 async function escondeSubmitMessage() {
-    await new Promise(resolve => setTimeout(resolve, 3000));
+    await new Promise(resolve => setTimeout(resolve, 2500));
     document.getElementById("submitSuccessMessage").setAttribute("class", "d-none")
     document.getElementById("submitErrorMessage").setAttribute("class", "d-none")
   }
+
+function formataFone(f)
+    {
+        
+        var str = f.value;
+        str=str.replace("(","");
+        str=str.replace(")","");
+        str=str.replace("-","");
+        str=str.replace(" ","");
+        //alert(str.length);
+        if(str.length>=11){
+            f.value = "("+str.slice(0,2)+") "+str.slice(2,7)+"-"+str.slice(7);
+        }
+        else if(str.length<11 && str.length>=5){
+            f.value = "("+str.slice(0,2)+") "+str.slice(2,6)+"-"+str.slice(6);
+        }
+        else{
+            f.value = "("+str.slice(0,2)+") "+str.slice(2);
+        };
+    }
+
 window.addEventListener('DOMContentLoaded', event => {
 
     // Activate Bootstrap scrollspy on the main nav element
